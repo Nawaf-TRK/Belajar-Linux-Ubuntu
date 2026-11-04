@@ -1,0 +1,65 @@
+📝 Log Sesi 5: Redirection dan Pipeline
+Tanggal: 31 Oktober 2026
+Status: Selesai (Nilai Kuis: 85/100)
+
+🎯 Materi yang Dipelajari
+Redirection: Mengalihkan output perintah ke file atau tempat lain.
+
+Pipeline (|): Menyambung output perintah pertama menjadi input perintah kedua.
+
+🧠 Konsep Kunci
+> (Satu lebih besar): Menimpa isi file. Jika file sudah ada, isinya dihapus dan diganti dengan output baru.
+
+>> (Dua lebih besar): Menambahkan (append) ke baris akhir file. Isi lama tidak hilang.
+
+2> (Error Redirection): Mengalihkan pesan error (bukan output normal) ke dalam file.
+
+File descriptor: 1 untuk output normal, 2 untuk error.
+
+| (Pipeline): Menyambung perintah. Output dari kiri menjadi input untuk perintah di kanan.
+
+Contoh: ls -l /etc | grep passwd (Mencari file passwd dari daftar file di /etc).
+
+💻 Praktik di Terminal
+Membuktikan > vs >>:
+
+echo "Baris 1" > file.txt (File berisi Baris 1).
+
+echo "Baris 2" >> file.txt (File berisi Baris 1 dan Baris 2).
+
+echo "Baris 3" > file.txt (File hanya berisi Baris 3, Baris 1 & 2 hilang).
+
+Membuktikan Pipeline:
+
+ls -l /etc | wc -l (Menghitung ada berapa baris file di /etc, hasil: 208).
+
+ls -l /etc | sort | more (Menampilkan file /etc secara berurutan dan per layar).
+
+Membuktikan Error Redirection (2>):
+
+ls filetidakada.txt 2> error.log (Pesan error disimpan ke error.log, layar kosong).
+
+cat error.log (Menampilkan isi pesan error).
+
+⚠️ Kesalahan & Koreksi
+Kesalahan: Masih keliru membedakan redirection output biasa (>) dengan redirection error (2>).
+
+Koreksi: Ingat, > untuk output normal (file/teks yang benar). 2> khusus untuk pesan error (misal "No such file or directory").
+
+📚 Kosakata Baru (Inggris)
+Redirect: Mengalihkan.
+
+Pipe: Pipa (saluran).
+
+Append: Menambahkan (di akhir).
+
+Overwrite: Menimpa.
+
+Standard Output (stdout): Keluaran standar (normal).
+
+Standard Error (stderr): Keluaran error.
+
+✅ Yang Perlu Dilatih
+Membedakan penggunaan > dan 2>.
+
+Membiasakan diri menggunakan pipeline (|) untuk menggabungkan perintah.
