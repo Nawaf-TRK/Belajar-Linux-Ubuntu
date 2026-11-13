@@ -11,13 +11,6 @@ Repositori ini dibuat sebagai wujud komitmen saya untuk:
 
 
 
-## 🛠️ Kemampuan yang Dipelajari
-- **Navigasi & Manajemen File**: `pwd`, `cd`, `ls`, `mkdir`, `cp`, `mv`, `rm`.
-- **Manajemen Hak Akses (Penting untuk Cyber Security)**: `chmod` (simbolik & angka), `ls -l`, prinsip *Least Privilege*.
-- **Pengolahan Teks & Log (Penting untuk Forensics)**: `cat`, `more`, `grep`, `head`, `tail`, `sort`, `wc`.
-- **Redirection & Pipeline**: `>`, `>>`, `2>`, `|`.
-- **Wildcard**: `*`, `?`, `[]`.
-
 ## 👨‍💻 Tentang Saya
 Saya **Nawaf**, seorang mahasiswa semester 1 yang memiliki passion di bidang teknologi, dengan ketertarikan khusus pada **Cyber Security** dan **Linux**. Saat ini saya sedang fokus membangun fondasi yang kuat untuk mendukung cita-cita saya belajar, berkompetisi (CTF), dan bekerja di luar negeri.
 
