@@ -9,15 +9,7 @@ Repositori ini dibuat sebagai wujud komitmen saya untuk:
 3. **Mengembangkan keterampilan dasar untuk kompetisi CTF (Capture The Flag) dan Cyber Security**, khususnya pada kategori Linux Privilege Escalation dan Forensics.
 4. Mendokumentasikan proses belajar secara transparan dan terstruktur.
 
-## 📚 Daftar Materi
-Berikut adalah ringkasan materi yang telah saya pelajari dan praktikkan:
 
-| Sesi | Topik | File |
-| :--- | :--- | :--- |
-| Sesi 4 | chmod Bentuk Angka (Okthal) | [Lihat Catatan](./sesi-4-chmod-angka.md) |
-| Sesi 5 | Redirection & Pipeline | [Lihat Catatan](./sesi-5-redirection-pipeline.md) |
-| Sesi 6 | Filter & Utilitas Linux | [Lihat Catatan](./sesi-6-filter-utilitas.md) |
-| Sesi 7 | Wildcard (Pola Nama File) | [Lihat Catatan](./sesi-7-wildcard.md) |
 
 ## 🛠️ Kemampuan yang Dipelajari
 - **Navigasi & Manajemen File**: `pwd`, `cd`, `ls`, `mkdir`, `cp`, `mv`, `rm`.
