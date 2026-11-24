@@ -1,39 +1,45 @@
-📝 Log Sesi 8: Regular Expression (Regex) dengan grep
-Tanggal: 6 November 2026
-Status: Selesai (Praktik: 100/100, Teori: 100/100)
+# 📝 Log Sesi 8: Regular Expression (Regex) dengan `grep`
 
-🎯 Materi yang Dipelajari
-Regular Expression (Regex): Pola pencarian teks yang lebih canggih.
+| Atribut | Detail |
+| :--- | :--- |
+| **Tanggal** | 6 November 2026 |
+| **Status** | ✅ Selesai |
+| **Skor** | Praktik: **100/100** \| Teori: **100/100** |
 
-Simbol dasar: ^, $, ., [].
+---
 
-🧠 Konsep Kunci
-^ (Awal Baris): Mencari pola yang ada di awal baris.
+## 🎯 Materi yang Dipelajari
+* **Regular Expression (Regex):** Pola pencarian teks yang lebih fleksibel dan spesifik dibandingkan pencarian teks biasa.
+* **Metakarakter Dasar:** Penggunaan simbol `^`, `$`, `.`, dan `[]` bersama perintah `grep`.
 
-Contoh: grep "^root" /etc/passwd -> Mencari baris yang diawali "root".
+---
 
-$ (Akhir Baris): Mencari pola yang ada di akhir baris.
+## 🧠 Konsep Kunci
 
-Contoh: grep "bash$" /etc/passwd -> Mencari baris yang diakhiri "bash".
+| Simbol | Nama / Fungsi | Penjelasan | Contoh Perintah | Hasil Pencocokan |
+| :--- | :--- | :--- | :--- | :--- |
+| **`^`** | Awal Baris (*Caret*) | Mencari pola yang berada tepat di awal baris. | `grep "^root" /etc/passwd` | Baris yang diawali kata `"root"` |
+| **`$`** | Akhir Baris (*Dollar*) | Mencari pola yang berada tepat di akhir baris. | `grep "bash$" /etc/passwd` | Baris yang diakhiri kata `"bash"` |
+| **`.`** | Karakter Tunggal (*Dot*) | Mewakili **satu** karakter apa saja (huruf, angka, atau simbol). | `grep "r.t" file.txt` | `"rot"`, `"rat"`, `"rut"`, `"r1t"` |
+| **`[]`** | Kumpulan Karakter (*Brackets*) | Mencocokkan salah satu karakter yang ada di dalam kurung. | `grep "r[oa]t" file.txt` | Hanya `"rot"` atau `"rat"` |
 
-. (Titik): Mewakili satu karakter apa saja.
+---
 
-Contoh: grep "r.t" file.txt -> Cocok dengan "rot", "rat", "rut".
+## 💻 Praktik di Terminal
 
-[] (Kurung Siku): Mencocokkan salah satu karakter di dalamnya.
+**1. Persiapan File (`regex.txt`)**
+Membuat file `regex.txt` berisi 4 baris pengujian yang memuat kata `"root"` di posisi berbeda (awal dan akhir baris).
 
-Contoh: grep "r[oa]t" file.txt -> Hanya cocok dengan "rot" atau "rat".
+**2. Eksekusi Perintah**
+```bash
+# Mencari kata "root" di awal baris -> Output: Baris 1 dan 3
+grep "^root" regex.txt
 
-💻 Praktik di Terminal
-Membuat file regex.txt dengan 4 baris yang mengandung kata "root".
+# Mencari kata "root" di akhir baris -> Output: Baris 2 dan 4
+grep "root$" regex.txt
 
-grep "^root" regex.txt -> Menampilkan baris 1 dan 3 (awal baris).
+# Mencari pola 'r' + 1 karakter bebas + 't' -> Output: Kosong (tidak ada yang cocok)
+grep "r.t" regex.txt
 
-grep "root$" regex.txt -> Menampilkan baris 2 dan 4 (akhir baris).
-
-grep "r.t" regex.txt -> Kosong (tidak ada yang cocok).
-
-grep "r[oa]t" regex.txt -> Kosong (tidak ada yang cocok).
-
-⚠️ Kesalahan & Koreksi
-Tidak ada kesalahan konsep yang berarti. Hanya sempat ragu pada soal yang hasilnya kosong, tetapi itu wajar.
+# Mencari kata "rot" atau "rat" -> Output: Kosong (tidak ada yang cocok)
+grep "r[oa]t" regex.txt
