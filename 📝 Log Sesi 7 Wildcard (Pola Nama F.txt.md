@@ -1,58 +1,51 @@
-📝 Log Sesi 7: Wildcard (Pola Nama File)
-Tanggal: 3 November 2026
-Status: Selesai (Praktik: 100/100, Teori: 50/100)
+# 📝 Log Sesi 7: Wildcard (Pola Nama File)
 
-🎯 Materi yang Dipelajari
-Wildcard: Simbol khusus untuk mencocokkan nama file berdasarkan pola tertentu.
+| Atribut | Detail |
+| :--- | :--- |
+| **Tanggal** | 3 November 2026 |
+| **Status** | ✅ Selesai |
+| **Skor** | Praktik: **100/100** \| Teori: **50/100** |
 
-Tiga jenis wildcard: *, ?, dan [].
+---
 
-🧠 Konsep Kunci (Analogi "Kunci dan Lubang Kunci")
-* (Bintang) = Kunci Master (Apa Saja Boleh)
+## 🎯 Materi yang Dipelajari
+* **Wildcard:** Simbol khusus di shell untuk mencocokkan atau memfilter nama file berdasarkan pola tertentu (*globbing*).
+* **Tiga Simbol Utama:** `*` (*asterisk*), `?` (*question mark*), dan `[]` (*square brackets*).
 
-Arti: Mewakili 0 karakter, 1 karakter, atau lebih (apa saja).
+---
 
-Contoh: ls *.txt -> Menampilkan semua file yang berakhiran .txt (misal: laporan1.txt, data2.txt).
+## 🧠 Konsep Kunci (Analogi "Kunci dan Lubang Kunci")
 
-Tidak cocok untuk: gambar.jpg (karena akhirannya bukan .txt).
+### 1. `*` (Bintang) — Kunci Master (Apa Saja Boleh)
+* **Arti:** Mewakili **0 karakter, 1 karakter, atau lebih** (karakter apa saja).
+* **Contoh:** `ls *.txt`
+  * ✅ **Cocok:** `laporan1.txt`, `data2.txt`, `.txt`
+  * ❌ **Tidak Cocok:** `gambar.jpg` (akhiran bukan `.txt`)
 
-? (Tanya) = Kunci dengan Satu Gigi Hilang (Tepat Satu Karakter)
+### 2. `?` (Tanya) — Kunci dengan Satu Gigi Hilang (Tepat Satu Karakter)
+* **Arti:** Mewakili **tepat satu karakter** bebas. Tidak boleh kosong dan tidak boleh lebih dari satu.
+* **Contoh:** `ls laporan?.txt`
+  * ✅ **Cocok:** `laporan1.txt`, `laporanA.txt`
+  * ❌ **Tidak Cocok:** `laporan10.txt` (`"10"` terdiri dari dua karakter)
 
-Arti: Mewakili tepat satu karakter. Tidak boleh kurang, tidak boleh lebih.
+### 3. `[]` (Kurung Siku) — Kunci dengan Pilihan Gigi (Pilih Salah Satu)
+* **Arti:** Mencocokkan **satu karakter** yang dipilih dari daftar karakter di dalam kurung.
+* **Contoh:** `ls laporan[12].txt`
+  * ✅ **Cocok:** `laporan1.txt`, `laporan2.txt`
+  * ❌ **Tidak Cocok:** `laporanA.txt` (huruf `'A'` tidak terdaftar di dalam `[12]`)
 
-Contoh: ls laporan?.txt -> Cocok dengan laporan1.txt, laporanA.txt.
+---
 
-Tidak cocok untuk: laporan10.txt (karena "10" dua karakter).
+## 💻 Praktik di Terminal
 
-[] (Kurung Siku) = Kunci dengan Pilihan Gigi (Pilih Salah Satu)
+**1. Membuat File Uji**
+```bash
+touch buku1.txt buku2.txt buku10.txt bukuA.txt
+# Mencocokkan tepat 1 karakter setelah "buku" -> Output: buku1.txt, buku2.txt, bukuA.txt
+ls buku?.txt
 
-Arti: Mencocokkan salah satu karakter yang ada di dalam kurung.
+# Mencocokkan angka '1' atau '2' setelah "buku" -> Output: buku1.txt, buku2.txt
+ls buku[12].txt
 
-Contoh: ls laporan[12].txt -> Cocok dengan laporan1.txt dan laporan2.txt.
-
-Tidak cocok untuk: laporanA.txt (karena 'A' tidak ada di dalam [12]).
-
-💻 Praktik di Terminal
-Membuat file uji: touch buku1.txt buku2.txt buku10.txt bukuA.txt.
-
-ls buku?.txt -> Menampilkan buku1.txt, buku2.txt, bukuA.txt.
-
-ls buku[12].txt -> Menampilkan buku1.txt, buku2.txt.
-
-ls buku*.txt -> Menampilkan buku10.txt, buku1.txt, buku2.txt, bukuA.txt.
-
-⚠️ Kesalahan & Koreksi
-Kesalahan: Dalam kuis teori, hanya menulis simbol * tanpa perintah lengkap ls.
-
-Koreksi: Perintah harus ditulis lengkap: ls *.txt, bukan hanya *.
-
-Kesalahan: Membedakan arti * dan ?. * artinya "apa saja" (0 atau lebih), sedangkan ? artinya "tepat satu karakter".
-
-📚 Kosakata Baru (Inggris)
-Wildcard: Karakter pengganti.
-
-Pattern: Pola.
-
-Match: Cocok.
-
-Asterisk: Tanda bintang (*).
+# Mencocokkan 0 atau lebih karakter setelah "buku" -> Output: buku10.txt, buku1.txt, buku2.txt, bukuA.txt
+ls buku*.txt
